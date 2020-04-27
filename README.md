@@ -28,7 +28,7 @@ This is my dotfiles, a shell script to install my local OSX machine. Try to run 
 - tree
 - wget
 
-## List of tools
+## List of apps
 
 - google-chrome
 - visual-studio-code
