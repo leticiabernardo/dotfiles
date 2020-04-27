@@ -1,0 +1,21 @@
+{
+    "emmet.showSuggestionsAsSnippets": true,
+    "editor.minimap.enabled": false,
+    "workbench.colorTheme": "One Monokai",
+    "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
+    "editor.fontFamily": "'Dank Mono', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": "14",
+    "editor.fontLigatures": true,
+    "editor.fontWeight": "300",
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "comment",
+                "settings": { 
+                    "fontStyle": "italic",
+                    "foreground": "#888"
+                }
+            }
+        ]
+    }
+}
