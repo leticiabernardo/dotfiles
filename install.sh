@@ -29,8 +29,4 @@ cp -r files/.zshrc ~/.zshrc
 # install fonts
 cp files/fonts/*.ttf $HOME/Library/Fonts/
 
-# setup vscode
-cp files/vscode/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
-cp files/vscode/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
-
 echo "Awesome, allset! 👌🏻"
