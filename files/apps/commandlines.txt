@@ -14,4 +14,3 @@ sqlite
 postgresql
 opencv
 wget
-mockery
