@@ -1,19 +1,30 @@
 echo "Welcome! Setting up the environment, wait please..."
 
+# installing xcode
+if ! command -v xcode-select &> /dev/null
+then
+    xcode-select --install
+fi
+
 # run brew setup
-chmod +x ./setup/brew.sh
-./setup/brew.sh
+chmod +x $(pwd)/setup/brew.sh
+$(pwd)/setup/brew.sh
 
 # setup git
 cp files/.gitconfig ~/.gitconfig
 
-chmod +x ./setup/git.sh
-./setup/git.sh
+chmod +x $(pwd)/setup/git.sh
+$(pwd)/setup/git.sh
+
+# setup OS preferences
+chmod +x $(pwd)/setup/macos.sh
+$(pwd)/setup/macos.sh
 
 # install & setup oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-cp files/.zshrc ~/.zshrc
+chmod +x ~/.zshrc
+cp -r files/.zshrc ~/.zshrc
 
 # install fonts
 cp files/fonts/*.ttf $HOME/Library/Fonts/
