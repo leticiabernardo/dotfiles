@@ -1,0 +1,17 @@
+git
+gcc
+python
+go
+node 
+npm
+nvm
+yarn
+docker
+docker-compose
+kubernetes-cli
+mysql
+sqlite
+postgresql
+opencv
+wget
+mockery
