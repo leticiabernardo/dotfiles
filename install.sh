@@ -26,6 +26,12 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 chmod +x ~/.zshrc
 cp -r files/.zshrc ~/.zshrc
 
+# install code command in PATH (vscode)
+if ! command -v code &> /dev/null
+then
+    ln -s "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code" /usr/local/bin/code
+fi
+
 # install fonts
 cp files/fonts/*.ttf $HOME/Library/Fonts/
 
