@@ -1,14 +1,19 @@
-# Dotfiles 
+# Dotfiles
 
-This is my dotfiles, a shell script to install my local OSX machine. Try to run the command below to install the list of tools and apps.
+This is my dotfiles, a shell script to recreate my personal environment quickly on any OSX machine.
 
 ## Installation
 
+*Nothing is needed on your machine to run the script.*<br />
+Try to run the command below to install the list of command lines and apps.
+
 ```
-./install.sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/leticiabernardo/dotfiles/master/install.sh)"
 ```
 
-## List of tools
+And well done! :sunglasses:
+
+## List of command lines
 
 - git
 - gcc
@@ -16,16 +21,15 @@ This is my dotfiles, a shell script to install my local OSX machine. Try to run 
 - go
 - node
 - npm
+- nvm
 - yarn
 - docker
 - docker-compose
 - kubernetes-cli
 - mysql
 - sqlite
-- mongodb
 - postgresql
 - opencv
-- tree
 - wget
 
 ## List of apps
@@ -37,6 +41,6 @@ This is my dotfiles, a shell script to install my local OSX machine. Try to run 
 - discord
 - mysqlworkbench
 - postman
-- pycharm
+- insomnia
 - slack
-- evernote
+- whatsapp
