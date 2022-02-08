@@ -8,3 +8,6 @@ postman
 insomnia
 slack
 whatsapp
+pycharm
+anaconda
+arduino
