@@ -9,9 +9,13 @@
 	reb = "!r() { git rebase -i HEAD~$1; }; r"
 	d = !"git diff-index --quiet HEAD -- || clear; git diff --patch-with-stat"
 	graph = log --graph --decorate
+	l = log
 
 [color]
 	ui = true
+
+[core]
+    editor = vi
 
 [color "branch"]
 	current = yellow reverse
