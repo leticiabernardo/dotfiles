@@ -7,3 +7,4 @@ mysqlworkbench
 postman
 insomnia
 slack
+whatsapp
