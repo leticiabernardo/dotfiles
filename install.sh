@@ -39,4 +39,8 @@ then
     ln -s "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code" /usr/local/bin/code
 fi
 
+# install settings sync extensions to vscode
+# https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync
+code --install-extension Shan.code-settings-sync
+
 echo "Awesome, allset! 👌🏻"
