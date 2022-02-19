@@ -30,6 +30,6 @@ chmod +x $(pwd)/zsh/zsh.sh && $(pwd)/zsh/zsh.sh
 chmod +x $(pwd)/vscode/vscode.sh && $(pwd)/vscode/vscode.sh 
 
 # Install fonts
-cp files/fonts/*.ttf $HOME/Library/Fonts/
+cp $(pwd)/fonts/*.ttf $HOME/Library/Fonts/
 
 echo "Awesome, allset! 👌🏻"
