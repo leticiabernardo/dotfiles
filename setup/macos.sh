@@ -1,12 +1,102 @@
+#!/usr/bin/env bash
+
+# Close any open System Preferences panes
+osascript -e 'tell application "System Preferences" to quit'
+
+# Set software update OFF to avoid conflicts
+sudo softwareupdate --schedule OFF
+
+#######################################
+# Launchpad
+#######################################
+# Set minimize effect to scale
+defaults write com.apple.dock mineffect -string scale
+
+#######################################
+# Trackpad
+#######################################
+# Disable "natural" scrolling
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+
+#######################################
+# iTerm 2
+#######################################
+/usr/libexec/PlistBuddy -c "Delete :'New Bookmarks':0:'Custom Directory'" ~/Library/Preferences/com.googlecode.iterm2.plist
+/usr/libexec/PlistBuddy -c "Add :'New Bookmarks':0:'Custom Directory' string Recycle" ~/Library/Preferences/com.googlecode.iterm2.plist
+
+#######################################
+# Finder
+#######################################
+
+# Disable warning before emptying the trash
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
+
+# Empty trash securely by default
+defaults write com.apple.finder EmptyTrashSecurely -bool true
+
+# Show library folder
+chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
+
 # Create path to save screenshots
 SCREENSHOT_DIR=~/Screenshots
 mkdir -p $SCREENSHOT_DIR
 defaults write com.apple.screencapture location $SCREENSHOT_DIR
 
-# Disable "natural" scrolling
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+#######################################
+# Kill affected applications
+#######################################
+killall Finder
+killall Dock
+  
+sudo softwareupdate --schedule ON
+#!/usr/bin/env bash
 
+# Close any open System Preferences panes
+osascript -e 'tell application "System Preferences" to quit'
+
+# Set software update OFF to avoid conflicts
+sudo softwareupdate --schedule OFF
+
+#######################################
+# Launchpad
+#######################################
 # Set minimize effect to scale
 defaults write com.apple.dock mineffect -string scale
 
+#######################################
+# Trackpad
+#######################################
+# Disable "natural" scrolling
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+
+#######################################
+# iTerm 2
+#######################################
+/usr/libexec/PlistBuddy -c "Delete :'New Bookmarks':0:'Custom Directory'" ~/Library/Preferences/com.googlecode.iterm2.plist
+/usr/libexec/PlistBuddy -c "Add :'New Bookmarks':0:'Custom Directory' string Recycle" ~/Library/Preferences/com.googlecode.iterm2.plist
+
+#######################################
+# Finder
+#######################################
+
+# Disable warning before emptying the trash
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
+
+# Empty trash securely by default
+defaults write com.apple.finder EmptyTrashSecurely -bool true
+
+# Show library folder
+chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
+
+# Create path to save screenshots
+SCREENSHOT_DIR=~/Screenshots
+mkdir -p $SCREENSHOT_DIR
+defaults write com.apple.screencapture location $SCREENSHOT_DIR
+
+#######################################
+# Kill affected applications
+#######################################
+killall Finder
 killall Dock
+  
+sudo softwareupdate --schedule ON
