@@ -1,3 +1,9 @@
+#!/bin/bash
+#
+#######################################
+# VSCODE CONFIG
+#######################################
+
 # Install code command in PATH (vscode)
 if ! command -v code &> /dev/null
 then

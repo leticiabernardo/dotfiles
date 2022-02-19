@@ -1,4 +1,11 @@
-#!/usr/bin/env bash
+#!/bin/bash
+#
+#######################################
+# OSX PREFERENCES
+#######################################
+
+PROJECTS_DIR=~/Documents/Projects
+SCREENSHOT_DIR=~/Screenshots
 
 # Close any open System Preferences panes
 osascript -e 'tell application "System Preferences" to quit'
@@ -37,8 +44,10 @@ defaults write com.apple.finder EmptyTrashSecurely -bool true
 # Show library folder
 chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
 
+# Create path for my projects
+mkdir -p $PROJECTS_DIR
+
 # Create path to save screenshots
-SCREENSHOT_DIR=~/Screenshots
 mkdir -p $SCREENSHOT_DIR
 defaults write com.apple.screencapture location $SCREENSHOT_DIR
 
