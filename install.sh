@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Ask for the administrator password upfront
+# Ask for the administrator password
 sudo -v
 
 echo "Welcome! Setting up the environment, wait please..."
@@ -12,8 +12,7 @@ then
 fi
 
 # Brew setup
-chmod +x $(pwd)/setup/brew.sh
-$(pwd)/setup/brew.sh
+chmod +x $(pwd)/brew/brew.sh && $(pwd)/brew/brew.sh
 
 # Python setup
 chmod +x $(pwd)/python/python.sh && $(pwd)/python/python.sh
