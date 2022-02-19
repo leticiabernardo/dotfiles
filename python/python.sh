@@ -12,12 +12,12 @@ fi
 port select --set pip pip3
 
 # Install and upgrade pip packages
-pip install --upgrade setuptools
-pip install --upgrade pip
+python -m pip install --upgrade setuptools
+python -m pip install --upgrade pip
 
-pip install pandas
-pip install virtualenv
-pip install awscli
-pip install numpy
-pip install requests
-pip install pytest
+python -m pip install pandas
+python -m pip install virtualenv
+python -m pip install awscli
+python -m pip install numpy
+python -m pip install requests
+python -m pip install pytest
