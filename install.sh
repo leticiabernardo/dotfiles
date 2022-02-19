@@ -1,3 +1,8 @@
+#!/usr/bin/env bash
+
+# Ask for the administrator password upfront
+sudo -v
+
 echo "Welcome! Setting up the environment, wait please..."
 
 # Install xcode
@@ -20,9 +25,9 @@ cp files/.gitconfig ~/.gitconfig
 chmod +x $(pwd)/setup/git.sh
 $(pwd)/setup/git.sh
 
-# MacOS preferences setup
-chmod +x $(pwd)/setup/macos.sh
-$(pwd)/setup/macos.sh
+# OSX preferences setup
+chmod +x $(pwd)/osx/osx_preferences.sh
+$(pwd)/osx/osx_preferences.sh
 
 # Install fonts
 cp files/fonts/*.ttf $HOME/Library/Fonts/
