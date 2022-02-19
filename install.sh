@@ -20,14 +20,10 @@ chmod +x $(pwd)/setup/python.sh
 $(pwd)/setup/python.sh
 
 # Git setup
-cp files/.gitconfig ~/.gitconfig
-
-chmod +x $(pwd)/setup/git.sh
-$(pwd)/setup/git.sh
+chmod +x $(pwd)/git/git.sh && $(pwd)/git/git.sh
 
 # OSX preferences setup
-chmod +x $(pwd)/osx/osx_preferences.sh
-$(pwd)/osx/osx_preferences.sh
+chmod +x $(pwd)/osx/osx_preferences.sh && $(pwd)/osx/osx_preferences.sh
 
 # Install fonts
 cp files/fonts/*.ttf $HOME/Library/Fonts/
