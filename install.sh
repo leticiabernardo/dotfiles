@@ -16,8 +16,7 @@ chmod +x $(pwd)/setup/brew.sh
 $(pwd)/setup/brew.sh
 
 # Python setup
-chmod +x $(pwd)/setup/python.sh
-$(pwd)/setup/python.sh
+chmod +x $(pwd)/python/python.sh && $(pwd)/python/python.sh
 
 # Git setup
 chmod +x $(pwd)/git/git.sh && $(pwd)/git/git.sh
