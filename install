@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+# Shell styleguide: https://google.github.io/styleguide/shellguide.html
+
+# Ask for the administrator password
+sudo -v
+
+PWD=$(pwd)
+SETUP_FILES=("brew" "python" "git" "osx_preferences" "zsh" "vscode")
+
+echo "Welcome! Setting up the environment, wait please..."
+
+# Install xcode
+if ! command -v xcode-select &> /dev/null; then
+    xcode-select --install
+fi
+
+for app in "${SETUP_FILES[@]}"; do
+    chmod +x "${PWD}/${app}/${app}" && "${PWD}/${app}/${app}"
+done
+
+# Install fonts
+cp $PWD/fonts/*.ttf $HOME/Library/Fonts/
+
+clear
+
+echo "Awesome, allset! 👌🏻"
+echo "Note that some of these changes require a restart to take effect."
