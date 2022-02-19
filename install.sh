@@ -25,14 +25,11 @@ chmod +x $(pwd)/git/git.sh && $(pwd)/git/git.sh
 # OSX preferences setup
 chmod +x $(pwd)/osx/osx_preferences.sh && $(pwd)/osx/osx_preferences.sh
 
+# zsh setup
+chmod +x $(pwd)/zsh/zsh.sh && $(pwd)/zsh/zsh.sh
+
 # Install fonts
 cp files/fonts/*.ttf $HOME/Library/Fonts/
-
-# Oh-my-zsh setup
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-chmod +x ~/.zshrc
-cp -r files/.zshrc ~/.zshrc
 
 # Install code command in PATH (vscode)
 if ! command -v code &> /dev/null
