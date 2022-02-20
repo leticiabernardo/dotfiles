@@ -45,7 +45,7 @@
 Try to run the command below to install and configure your environment.
 
 ```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/leticiabernardo/dotfiles/master/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/leticiabernardo/dotfiles/master/install)"
 ```
 
 And well done! :sunglasses:
