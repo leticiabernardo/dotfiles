@@ -23,6 +23,10 @@ export NVM_DIR="$HOME/.nvm"
 alias ...="cd .."
 alias ....="cd ../.."
 
+# Set python3/pip3 as the default python/pip
+alias python=python3
+alias pip=pip3
+
 # Zsh plugins (installed via brew)
 source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"

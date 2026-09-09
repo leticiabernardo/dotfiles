@@ -1,6 +1,11 @@
 #!/bin/bash
 #
 # Oh-my-zsh setup
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-chmod +x ~/.zshrc && cp -r $(pwd)/zsh/.zshrc ~/.zshrc
+ZSH_DIR=$(cd "$(dirname "$0")" && pwd)
+
+# RUNZSH=no and CHSH=no keep the installer from launching a new shell or
+# changing the login shell mid-script, which would hang a non-interactive run.
+RUNZSH=no CHSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+chmod +x ~/.zshrc && cp -r "$ZSH_DIR/.zshrc" ~/.zshrc

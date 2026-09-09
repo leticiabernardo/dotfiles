@@ -4,19 +4,16 @@
 # PYTHON CONFIG
 #######################################
 
-# Set python3 as default
-alias python=$(which python3)
+PYTHON3="$(which python3)"
 
-# Install pip and pip dependencies
-if [[ pip != "pip" ]]; then
+# Install pip if it's missing
+if ! command -v pip3 &> /dev/null; then
     echo "Installing pip..."
-    curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
-    python get-pip.py
+    curl "https://bootstrap.pypa.io/get-pip.py" -o "/tmp/get-pip.py"
+    "$PYTHON3" /tmp/get-pip.py
+    rm -f /tmp/get-pip.py
 fi
 
-# Set pip3 as default
-port select --set pip pip3
-
 # Install and upgrade pip packages
-python -m pip install --upgrade setuptools
-python -m pip install --upgrade pip
+"$PYTHON3" -m pip install --upgrade setuptools
+"$PYTHON3" -m pip install --upgrade pip

@@ -4,7 +4,9 @@
 # Git config
 #######################################
 
-cp $(pwd)/git/.gitconfig ~/.gitconfig
+GIT_DIR=$(cd "$(dirname "$0")" && pwd)
+
+cp "$GIT_DIR/.gitconfig" ~/.gitconfig
 
 # Writing github user account to gitconfig
 echo "Type in your full name"

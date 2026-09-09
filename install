@@ -2,17 +2,37 @@
 #
 # Shell styleguide: https://google.github.io/styleguide/shellguide.html
 
+# Homebrew refuses to run as root, so don't let this script run under sudo.
+# It asks for your password itself (via `sudo -v` below) whenever it's needed.
+if [ "$(id -u)" -eq 0 ]; then
+    echo "Please run this script without sudo — it will ask for your password when needed."
+    exit 1
+fi
+
 # Ask for the administrator password
 sudo -v
 
-PWD=$(pwd)
+REPO_URL="https://github.com/leticiabernardo/dotfiles.git"
 SETUP_FILES=("brew" "node" "python" "git" "osx_preferences" "zsh" "vscode")
 
 echo "Welcome! Setting up the environment, wait please..."
 
-# Install xcode
-if ! command -v xcode-select &> /dev/null; then
+# Install xcode command line tools (needed for git)
+if ! command -v xcode-select &> /dev/null || ! xcode-select -p &> /dev/null; then
     xcode-select --install
+fi
+
+# If we're not running from inside a checkout of the repo (e.g. when piped
+# straight from curl), clone it first so the setup files below exist.
+if [ -f "./brew/brew" ]; then
+    PWD=$(pwd)
+else
+    DOTFILES_DIR="$HOME/.dotfiles"
+    if [ ! -d "$DOTFILES_DIR" ]; then
+        echo "Cloning dotfiles into ${DOTFILES_DIR}..."
+        git clone "$REPO_URL" "$DOTFILES_DIR"
+    fi
+    PWD="$DOTFILES_DIR"
 fi
 
 for app in "${SETUP_FILES[@]}"; do

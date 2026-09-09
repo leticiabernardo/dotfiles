@@ -4,10 +4,18 @@
 # NODE CONFIG
 #######################################
 
-# Load nvm (installed via brew)
+# Make sure nvm is installed via brew
+brew install nvm
+
+# Load nvm
 export NVM_DIR="$HOME/.nvm"
 mkdir -p "$NVM_DIR"
-. "$(brew --prefix nvm)/nvm.sh"
+NVM_SH="$(brew --prefix nvm)/nvm.sh"
+if [ ! -f "$NVM_SH" ]; then
+    echo "Could not find nvm.sh at ${NVM_SH}, aborting node setup." >&2
+    exit 1
+fi
+. "$NVM_SH"
 
 # Install and set the latest LTS Node.js as default
 nvm install --lts
