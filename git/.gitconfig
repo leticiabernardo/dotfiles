@@ -10,14 +10,15 @@
 	d = !"git diff-index --quiet HEAD -- || clear; git diff --patch-with-stat"
 	graph = log --graph --decorate
 	l = log
-
 [color]
 	ui = true
-
 [core]
     editor = vi
-
 [color "branch"]
 	current = yellow reverse
 	local = yellow
 	remote = green
+[init]
+	defaultBranch = main
+[push]
+	autoSetupRemote = true

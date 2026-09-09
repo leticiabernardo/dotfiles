@@ -1,35 +1,52 @@
 tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "heroku/brew"
-brew "docker"
-brew "docker-compose"
-brew "gcc"
+tap "datadog-labs/pack"
+tap "hashicorp/tap"
+
+# Version control & CI
 brew "git"
-brew "go"
+brew "gh"
+
+# Containers & Kubernetes
+brew "docker"
+brew "docker-buildx"
+brew "docker-compose"
+brew "colima"
+brew "kind"
 brew "kubernetes-cli"
-brew "mysql"
-brew "node"
-brew "npm"
-brew "nvm"
-brew "opencv"
-brew "postgresql"
+brew "helm"
+
+# Languages & runtimes
+brew "go"
 brew "python"
-brew "sqlite"
-brew "wget"
-brew "yarn"
-brew "vercel-cli"
-brew "ffmpeg"
-brew "heroku"
-cask "anaconda"
-cask "arduino"
-cask "discord"
+brew "nvm"
+
+# Databases
+brew "postgresql"
+brew "redis"
+
+# Build tools
+brew "cmake"
+brew "swig"
+brew "gradle"
+brew "cocoapods"
+
+# Misc CLIs
+brew "tree"
+brew "watchman"
+brew "qemu"
+brew "duti"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+brew "hashicorp/tap/terraform"
+brew "datadog-labs/pack/pup"
+
+# Apps
+cask "claude"
+cask "gcloud-cli"
 cask "google-chrome"
-cask "insomnia"
 cask "iterm2"
-cask "mysqlworkbench"
+cask "obsidian"
 cask "postman"
-cask "pycharm"
+cask "rectangle"
 cask "slack"
-cask "spotify"
 cask "visual-studio-code"
-cask "whatsapp"

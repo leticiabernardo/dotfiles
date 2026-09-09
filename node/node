@@ -1,0 +1,21 @@
+#!/bin/bash
+#
+#######################################
+# NODE CONFIG
+#######################################
+
+# Load nvm (installed via brew)
+export NVM_DIR="$HOME/.nvm"
+mkdir -p "$NVM_DIR"
+. "$(brew --prefix nvm)/nvm.sh"
+
+# Install and set the latest LTS Node.js as default
+nvm install --lts
+nvm alias default 'lts/*'
+nvm use default
+
+# Install yarn 1.22
+npm install --global yarn@1.22
+
+# Make sure npm is present and up to date
+npm install --global npm

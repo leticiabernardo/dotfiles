@@ -6,7 +6,7 @@
 sudo -v
 
 PWD=$(pwd)
-SETUP_FILES=("brew" "python" "git" "osx_preferences" "zsh" "vscode")
+SETUP_FILES=("brew" "node" "python" "git" "osx_preferences" "zsh" "vscode")
 
 echo "Welcome! Setting up the environment, wait please..."
 

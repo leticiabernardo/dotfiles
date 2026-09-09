@@ -22,3 +22,7 @@ export NVM_DIR="$HOME/.nvm"
 
 alias ...="cd .."
 alias ....="cd ../.."
+
+# Zsh plugins (installed via brew)
+source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"

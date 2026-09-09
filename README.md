@@ -53,6 +53,10 @@ And well done! :sunglasses:
 ## What settings are installed?
 
 - Brew setup and install apps
+- Node
+    - Install the latest LTS Node.js via nvm and set it as default
+    - Install yarn 1.22
+    - Make sure npm is up to date
 - Python
     - Install python3
     - Set python3 as default
@@ -67,50 +71,65 @@ And well done! :sunglasses:
     - Create Screenshots folder and modify the default folder
     - Disable "natural" scrolling
     - Set minimize effect to scale
+    - Set Google Chrome as the default browser
+    - Show hidden files, path bar and status bar in Finder
+    - Use list view in Finder windows by default
+    - Auto-hide the Dock and smaller icons
+    - Show battery percentage in the menu bar
 - VSCODE
     - Install code command in PATH (vscode)
-    - Install settings sync extensions for vscode**
+    - Sync user `settings.json` and `keybindings.json`
+    - Install all extensions
 - ZSH
   - Install ZSH and configure the theme `robbyrussell` for all terminals
+  - Install `zsh-autosuggestions` and `zsh-syntax-highlighting` plugins
 - Install some _beautiful_ fonts
 
 <br/><br/>
-\* [Adding a new SSH key to your GitHub account][tutorial-add-ssh-keys-url]<br/>
-** If you've never settings synced with your VSCode, [follow this tutorial][tutorial-settings-sync-url]
+\* [Adding a new SSH key to your GitHub account][tutorial-add-ssh-keys-url]
 
 
 ## Brew installations
 ### List of command lines
 
 - git
-- gcc
-- python
-- go
-- node
-- npm
-- nvm
-- yarn
+- gh
 - docker
+- docker-buildx
 - docker-compose
+- colima
+- kind
 - kubernetes-cli
-- mysql
-- sqlite
+- helm
+- go
+- python
+- nvm
 - postgresql
-- opencv
-- wget
+- redis
+- cmake
+- swig
+- gradle
+- cocoapods
+- tree
+- watchman
+- qemu
+- duti
+- zsh-autosuggestions
+- zsh-syntax-highlighting
+- terraform
+- pup
 
 ### List of apps
 
+- claude
+- gcloud-cli
 - google-chrome
-- visual-studio-code
 - iterm2
-- spotify
-- discord
-- mysqlworkbench
+- obsidian
 - postman
-- insomnia
+- rectangle
 - slack
-- whatsapp
+- visual-studio-code
 
 <!-- LICENSE -->
 ## License
@@ -119,7 +138,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[tutorial-settings-sync-url]: https://riptutorial.com/visual-studio-code/learn/100017/settings-sync
 [tutorial-add-ssh-keys-url]: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
 [contributors-shield]: https://img.shields.io/github/contributors/leticiabernardo/dotfiles.svg?style=for-the-badge
 [contributors-url]: https://github.com/leticiabernardo/dotfiles/graphs/contributors

@@ -4,12 +4,46 @@
 # VSCODE CONFIG
 #######################################
 
+VSCODE_DIR=$(cd "$(dirname "$0")" && pwd)
+VSCODE_USER_DIR="$HOME/Library/Application Support/Code/User"
+
 # Install code command in PATH (vscode)
 if ! command -v code &> /dev/null
 then
     ln -s "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code" /usr/local/bin/code
 fi
 
-# Install settings sync extensions for vscode
-# https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync
-code --install-extension Shan.code-settings-sync
+# Sync user settings and keybindings
+mkdir -p "$VSCODE_USER_DIR"
+cp "$VSCODE_DIR/settings.json" "$VSCODE_USER_DIR/settings.json"
+cp "$VSCODE_DIR/keybindings.json" "$VSCODE_USER_DIR/keybindings.json"
+
+# Install extensions
+EXTENSIONS=(
+    akamud.vscode-theme-onedark
+    angelorafael.jsx-html-tags
+    bradlc.vscode-tailwindcss
+    carbonid1.emmet-jss
+    codeium.codeium
+    dbaeumer.vscode-eslint
+    drcika.apc-extension
+    eamodio.gitlens
+    editorconfig.editorconfig
+    esbenp.prettier-vscode
+    fnando.linter
+    github.vscode-github-actions
+    golang.go
+    herrmannplatz.npm-dependency-links
+    miguelsolorio.symbols
+    ms-azuretools.vscode-containers
+    ms-ceintl.vscode-language-pack-pt-br
+    mskelton.one-dark-theme
+    naumovs.color-highlight
+    pflannery.vscode-versionlens
+    redhat.vscode-yaml
+    unifiedjs.vscode-mdx
+)
+
+for extension in "${EXTENSIONS[@]}"; do
+    code --install-extension "$extension"
+done
