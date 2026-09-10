@@ -19,8 +19,10 @@ if ! command -v pip3 &> /dev/null; then
 fi
 
 # Install and upgrade pip packages to their latest version
-"$PYTHON3" -m pip install --upgrade setuptools
-"$PYTHON3" -m pip install --upgrade pip
+# (--break-system-packages: Homebrew's python is "externally managed" per
+# PEP 668, but this is a personal machine, not a shared/production one)
+"$PYTHON3" -m pip install --upgrade --break-system-packages setuptools
+"$PYTHON3" -m pip install --upgrade --break-system-packages pip
 
 # Clear out pip's cache of previously downloaded packages
 "$PYTHON3" -m pip cache purge
