@@ -1,5 +1,3 @@
-tap "datadog-labs/pack"
-
 # Version control & CI
 brew "git"
 brew "gh"
@@ -35,7 +33,6 @@ brew "qemu"
 brew "duti"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
-brew "datadog-labs/pack/pup"
 
 # Apps
 cask "claude"
