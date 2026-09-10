@@ -22,8 +22,8 @@ nvm install --lts
 nvm alias default 'lts/*'
 nvm use default
 
+# Upgrade npm first so later installs don't warn about an outdated npm
+npm install --global npm@latest
+
 # Install yarn 1.22
 npm install --global yarn@1.22
-
-# Make sure npm is present and up to date
-npm install --global npm@latest
