@@ -1,4 +1,3 @@
-tap "homebrew/bundle"
 tap "datadog-labs/pack"
 tap "hashicorp/tap"
 
