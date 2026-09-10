@@ -4,7 +4,7 @@
 # PYTHON CONFIG
 #######################################
 
-PYTHON3="$(which python3)"
+PYTHON3="$(brew --prefix)/bin/python3"
 
 # Install pip if it's missing
 if ! command -v pip3 &> /dev/null; then
