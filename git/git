@@ -6,6 +6,7 @@
 
 GIT_DIR=$(cd "$(dirname "$0")" && pwd)
 
+rm -f ~/.gitconfig
 cp "$GIT_DIR/.gitconfig" ~/.gitconfig
 
 # Writing github user account to gitconfig
