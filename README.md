@@ -116,7 +116,6 @@ And well done! :sunglasses:
 - duti
 - zsh-autosuggestions
 - zsh-syntax-highlighting
-- terraform
 - pup
 
 ### List of apps

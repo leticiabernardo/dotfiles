@@ -1,5 +1,4 @@
 tap "datadog-labs/pack"
-tap "hashicorp/tap"
 
 # Version control & CI
 brew "git"
@@ -36,7 +35,6 @@ brew "qemu"
 brew "duti"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
-brew "hashicorp/tap/terraform"
 brew "datadog-labs/pack/pup"
 
 # Apps
