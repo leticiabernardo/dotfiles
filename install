@@ -17,9 +17,15 @@ SETUP_FILES=("brew" "node" "python" "git" "osx_preferences" "zsh" "vscode")
 
 echo "Welcome! Setting up the environment, wait please..."
 
-# Install xcode command line tools (needed for git)
-if ! command -v xcode-select &> /dev/null || ! xcode-select -p &> /dev/null; then
+# Install xcode command line tools (needed for git). --install only opens
+# the GUI installer and returns immediately, so wait until it's actually done
+# before relying on git below.
+if ! xcode-select -p &> /dev/null; then
+    echo "Installing Xcode Command Line Tools, follow the prompts on screen..."
     xcode-select --install
+    until xcode-select -p &> /dev/null; do
+        sleep 5
+    done
 fi
 
 # If we're not running from inside a checkout of the repo (e.g. when piped
@@ -30,12 +36,17 @@ else
     DOTFILES_DIR="$HOME/.dotfiles"
     if [ ! -d "$DOTFILES_DIR" ]; then
         echo "Cloning dotfiles into ${DOTFILES_DIR}..."
-        git clone "$REPO_URL" "$DOTFILES_DIR"
+        git clone "$REPO_URL" "$DOTFILES_DIR" || { echo "Failed to clone the dotfiles repo."; exit 1; }
     else
         echo "Updating existing checkout at ${DOTFILES_DIR}..."
         git -C "$DOTFILES_DIR" pull
     fi
     PWD="$DOTFILES_DIR"
+fi
+
+if [ ! -f "${PWD}/brew/brew" ]; then
+    echo "Could not find the dotfiles checkout at ${PWD}, aborting."
+    exit 1
 fi
 
 for app in "${SETUP_FILES[@]}"; do
