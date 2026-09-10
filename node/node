@@ -26,4 +26,4 @@ nvm use default
 npm install --global yarn@1.22
 
 # Make sure npm is present and up to date
-npm install --global npm
+npm install --global npm@latest
