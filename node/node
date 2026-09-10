@@ -25,5 +25,5 @@ nvm use default
 # Upgrade npm first so later installs don't warn about an outdated npm
 npm install --global npm@latest
 
-# Install yarn 1.22
-npm install --global yarn@1.22
+# Install yarn 1.22 (allow its install script, blocked by npm by default)
+npm install --global yarn@1.22 --allow-scripts=yarn
